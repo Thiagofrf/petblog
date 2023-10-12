@@ -93,6 +93,12 @@ header .avatar {
     border: none;
 }
 
+.main-post-button button:hover {
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
 .main-post-button button:first-child {
     margin-right: 1.2rem;
 }
@@ -140,4 +146,78 @@ footer {
     background: var(--main-color);
     color: var(--white);
     padding: 2.65rem 1.6rem;
+}
+
+@media (min-width: 768px) {
+    
+    .container {
+        display: grid;
+        grid-template-areas: 
+            'header header header'
+            'main main main'
+            'footer footer footer'
+        ;
+    }
+
+    header {
+        grid-area: header;
+        padding: 1.6rem 11.2rem;
+    }
+
+    main {
+        display: grid;
+        grid-template-areas: 
+            'banner banner aside'
+            'post post aside'
+        ;
+        grid-area: main;
+        margin-top: 4.4rem;
+    } 
+
+    main .banner {
+        grid-area: banner;
+    }
+
+    main .banner img {
+        width: 100%;
+        margin-left: 11.2rem;
+        border-radius: 5px;
+    }
+
+    main .main-post {
+        grid-area: post;
+        width: 100%;
+        padding: 0;
+        margin-left: 11.2rem;
+    }
+
+    .main-post-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 3.2rem 0;
+    }
+
+    .main-post h1 {
+        margin: 0;
+    }
+
+    .main-post-button {
+        margin-bottom: 0;
+    }
+
+    aside {
+        grid-area: aside;
+        margin-left: 13rem;
+        padding-top: 0!important;
+    }
+
+    footer {
+        grid-area: footer;
+        margin-top: 3.9rem;
+    }
+
+    header .search-bar {
+        width: 85%;
+    }
 }
